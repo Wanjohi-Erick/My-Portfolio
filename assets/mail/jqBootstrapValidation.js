@@ -922,4 +922,16 @@
     if (defaults.methods[method]) {
       return defaults.methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
     } else if (typeof method === 'object' || !method) {
-      return defaults.methods.init.apply(thiÃ×ò“ğÓ¾–”Ÿ„ÇğR~~ÃÙ¤ü$üsçòGÓ×nTÛ	½Ûê4½å<½IïkWÂ¬FNj.ïH:-êÀ§#éÍèÓqö$w$°w½IÇ®‹>ngIÃS/I4¬@Å=}<ú$DcODq51†ö(ò§1¤9ö¸'öx+{T~t^Êr¾‚¦¢ò0¶©è!ò0º©(H.o*êˆCä¦¢2L,6w@{UïnÎ¿ }J0’CI êKEAşa÷.CDí0rÓ!¹ŒœŞ…Buî¯Tú«gÿï(YX²Hl6Bó=¹¶DÄ–À™ó€}Ëi±e79J6ÿÃ‰èÈNûÒğ¤Ãº¯è}¤’C|ó7òq“Y\Äç#Ï=bËçäŒÖì[	
+      return defaults.methods.init.apply(this, arguments);
+    } else {
+      $.error('Method ' + method + ' does not exist on jQuery.jqBootstrapValidation');
+      return null;
+    }
+
+  };
+
+  $.jqBootstrapValidation = function(options) {
+    $(":input").not("[type=image],[type=submit]").jqBootstrapValidation.apply(this, arguments);
+  };
+
+})(jQuery);
